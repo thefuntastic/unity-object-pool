@@ -1,0 +1,15 @@
+/Library
+/Temp
+*.booproj
+*.pidb
+*.csproj
+*.unityproj
+*.sln
+*.userprefs
+*.sln
+*.Thumbs.db
+*.suo
+*.dgml
+/obj
+/Reference
+/_ReSharper.*-csharp

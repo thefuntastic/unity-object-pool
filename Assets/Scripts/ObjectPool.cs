@@ -25,7 +25,7 @@ namespace MonsterLove.Collections
 		{
 			for (int i = 0; i < capacity; i++)
 			{
-				list.Add(CreateConatiner());
+				CreateConatiner();
 			}
 		}
 

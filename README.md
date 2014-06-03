@@ -77,7 +77,7 @@ History
 ----
 Created by Peter Cardwell-Gardner
 
-Bourne out of the realization that he was writing the samething over and over again, this was designed to be the last object pool you ever need. 
+Born out of the realization that he was writing the samething over and over again, this was designed to be the last object pool you ever need. 
 
 This project is used extensively in the upcoming Unity game *[Cadence](http://www.playcadence.com)* by [Made With Monster Love](http://www.madewithmonsterlove.com). 
 

@@ -9,6 +9,7 @@ namespace MonsterLove.Collections
 		private List<ObjectPoolContainer<T>> list;
 		private Dictionary<T, ObjectPoolContainer<T>> lookup;
 		private Func<T> factoryFunc;
+		private int lastIndex = 0;
 
 		public ObjectPool(Func<T> factoryFunc, int initialSize)
 		{
@@ -41,13 +42,16 @@ namespace MonsterLove.Collections
 			ObjectPoolContainer<T> container = null;
 			for (int i = 0; i < list.Count; i++)
 			{
-				if (list[i].Used)
+				lastIndex++;
+				if (lastIndex > list.Count - 1) lastIndex = 0;
+				
+				if (list[lastIndex].Used)
 				{
 					continue;
 				}
 				else
 				{
-					container = list[i];
+					container = list[lastIndex];
 					break;
 				}
 			}

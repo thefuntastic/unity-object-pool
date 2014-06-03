@@ -8,7 +8,6 @@ public class PoolManager : Singleton<PoolManager>
 	public bool logStatus;
 	public Transform root;
 
-	private List<ObjectPool<GameObject>> objectPools;
 	private Dictionary<GameObject, ObjectPool<GameObject>> prefabLookup;
 	private Dictionary<GameObject, ObjectPool<GameObject>> instanceLookup; 
 	
@@ -55,14 +54,14 @@ public class PoolManager : Singleton<PoolManager>
 
 		var pool = prefabLookup[prefab];
 
-		var target = pool.GetItem();
-		target.transform.position = position;
-		target.transform.rotation = rotation;
-		target.SetActive(true);
+		var clone = pool.GetItem();
+		clone.transform.position = position;
+		clone.transform.rotation = rotation;
+		clone.SetActive(true);
 
-		instanceLookup.Add(target, pool);
+		instanceLookup.Add(clone, pool);
 		dirty = true;
-		return target;
+		return clone;
 	}
 
 	public void releaseObject(GameObject clone)

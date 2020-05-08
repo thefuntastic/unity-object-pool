@@ -55,8 +55,7 @@ public class PoolManager : Singleton<PoolManager>
 		var pool = prefabLookup[prefab];
 
 		var clone = pool.GetItem();
-		clone.transform.position = position;
-		clone.transform.rotation = rotation;
+        clone.transform.SetPositionAndRotation(position, rotation);
 		clone.SetActive(true);
 
 		instanceLookup.Add(clone, pool);

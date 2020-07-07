@@ -25,11 +25,11 @@ namespace MonsterLove.Collections
 		{
 			for (int i = 0; i < capacity; i++)
 			{
-				CreateConatiner();
+				CreateContainer();
 			}
 		}
 
-		private ObjectPoolContainer<T> CreateConatiner()
+		private ObjectPoolContainer<T> CreateContainer()
 		{
 			var container = new ObjectPoolContainer<T>();
 			container.Item = factoryFunc();
